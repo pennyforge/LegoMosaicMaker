@@ -174,4 +174,4 @@ for i,row in enumerate(pixels):
 		LDrawFile.write(str(Piece(Colour(col), Vector(x, z, y), Identity().rotate(rot, YAxis), "3024", onexonexone))+'\n')
 
 print	
-print "Your mosiac file ", mosaicFilename, " is ready"	
+print "Your mosiac file", mosaicFilename, "is ready"	
