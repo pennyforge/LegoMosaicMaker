@@ -34,16 +34,14 @@ def distance(c1, c2): # Work out the nearest colour
 
 def checkInput(nosOfFiles):
 	userNumber = raw_input("Choose number? (q to quit) ")
-	#print nosOfFiles,userNumber
+
 
 	if userNumber == "q" or userNumber == "Q" or userNumber == "Quit":
 		sys.exit()
 	
 	try:
 		numberChosen = int(userNumber)
-		#print "In the try statement ",numberChosen
-		
-		
+
 		if numberChosen < 1 or numberChosen > nosOfFiles:
 			if nosOfFiles == 1:
 				print
@@ -78,15 +76,11 @@ def getFile():
 		nosOfFiles=nosOfFiles + 1
 
 	if nosOfFiles > 0:	
-		#print (fileList)
-		#print (nosOfFiles)
 		print ("Enter the number of the file you want to make a mosiac of...")
 		for fileName in fileList:
 			indexNumber = fileList.index(fileName)
 			print indexNumber+1, "-", fileName
 		confirmedNumber = checkInput(nosOfFiles)
-		#print confirmedNumber
-		#raw_input()
 		nameOfFile = fileList[int(confirmedNumber)-1]
 	else:
 		print ("Please add some .bmp images files to the script folder") 
@@ -122,7 +116,6 @@ onexonexone = Group(Vector(0, 0, 0), Identity())
 
 #Set up the LDraw file
 mosaicFilename = fileName[:-4] + "_mosiac.ldr"
-#LDrawFile = open('picture.ldr', 'w')
 LDrawFile = open(mosaicFilename, 'w')
 LDrawFile.write('0 // Mosaic Maker Colour - Neil Marsden'+'\n')
 
@@ -151,9 +144,7 @@ for i,row in enumerate(pixels):
 		colors = list(rgb_code_dictionary.keys())
 		closest_colors = sorted(colors, key=lambda color: distance(color, point))
 		closest_color = closest_colors[0]
-		code = rgb_code_dictionary[closest_color]
-		
-		
+		code = rgb_code_dictionary[closest_color]	
 		#set the Lego colour to the colour code
 		col = int(code)
 		#Up the counter and increment the brick position
